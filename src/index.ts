@@ -1,21 +1,19 @@
 import Observer from "./Models/Observer";
-import { LCDClient } from "@terra-money/terra.js";
 import axios from "axios";
-import near from "./Utils/near";
 import { config } from "dotenv";
 
 config();
 
-// const envVars = ["RPC_ADDRESS", "ARPC_ADDRESS", "WORKER_URL"];
+const envVars = ["RPC_ADDRESS", "ARPC_ADDRESS", "WORKER_URL"];
 
-// const missingEnvVars = envVars
-//   .filter((v) => !(v in process.env) || process.env[v] === "")
-//   .map((v) => v);
+const missingEnvVars = envVars
+  .filter((v) => !(v in process.env) || process.env[v] === "")
+  .map((v) => v);
 
-// if (missingEnvVars.length > 0) {
-//   console.error(`Missing the following ENV vars: ${missingEnvVars.join(", ")}`);
-//   process.exit(1);
-// }
+if (missingEnvVars.length > 0) {
+  console.error(`Missing the following ENV vars: ${missingEnvVars.join(", ")}`);
+  process.exit(1);
+}
 
 const workerUrl = process.env.WORKER_URL!;
 

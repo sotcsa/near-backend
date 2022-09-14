@@ -1,5 +1,4 @@
 import WebSocket from "ws";
-import { Block, BlockInfo, TxInfo } from "@terra-money/terra.js";
 import { workerUrl } from "..";
 import Collection from "@discordjs/collection";
 import axios from "axios";
